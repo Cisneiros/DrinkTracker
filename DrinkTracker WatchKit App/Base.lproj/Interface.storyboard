@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="DrinkTracker_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" layout="vertical" id="eA9-ou-x6u">
+                            <items>
+                                <label width="1" alignment="left" text="3" textAlignment="center" id="t3P-pn-7pE">
+                                    <fontDescription key="font" type="system" pointSize="64"/>
+                                </label>
+                                <picker height="28" alignment="left" id="sCy-Jv-I4r">
+                                    <connections>
+                                        <action selector="drinkNamePickerSelectedItemChanged:" destination="AgC-eL-Hgc" id="1Fx-EE-KPV"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="+🍺" id="kgY-gU-lWf">
+                            <connections>
+                                <action selector="addOneButtonClicked:" destination="AgC-eL-Hgc" id="CJV-I4-rfO"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <menu key="menu" id="1DC-P4-HwW">
+                        <items>
+                            <menuItem title="Remove one" icon="decline" id="97l-fF-0zG">
+                                <connections>
+                                    <action selector="removeOneMenuItemClicked" destination="AgC-eL-Hgc" id="kPZ-3f-eIe"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Reset all" icon="trash" id="GF9-fG-Vo4">
+                                <connections>
+                                    <action selector="resetAllMenuItemClicked" destination="AgC-eL-Hgc" id="0Lp-qA-b0f"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="addOneButton" destination="kgY-gU-lWf" id="2AQ-pj-nJE"/>
+                        <outlet property="counterLabel" destination="t3P-pn-7pE" id="FTh-AV-VAl"/>
+                        <outlet property="drinkNamePicker" destination="sCy-Jv-I4r" id="NFV-R0-T2h"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="305" y="279"/>
+        </scene>
+    </scenes>
+</document>
